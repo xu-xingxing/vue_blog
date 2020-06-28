@@ -1,5 +1,6 @@
 <template>
-  <div class="add-blog">
+  <div id="add-blog">
+    <h2>添加博客</h2>
    <form v-if="!submited">
     <label>博客标题</label>
     <input type="text" v-model="blog.title">
@@ -27,7 +28,7 @@
 
   <div v-if="submited">
     <h2>您的博客发布成功</h2>
-    </div>
+  </div>
    <div id="preview">
      <h3>博客总览</h3>
      <p>博客标题: {{blog.title}}</p>
@@ -78,5 +79,57 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  #add-blog * {
+    box-sizing: border-box;
+  }
+  #add-blog {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+  }
+  label {
+    display: block;
+    margin: 20px 0 10px;
+  }
+  input[type="text"], textarea,select {
+    display: block;
+    width: 100%;
+    padding: 8px;
+  }
+  textarea {
+    height: 200px;
+  }
+  
+  
+  #checkboxes {
+    margin-top: 30px;
+  }
+  #checkboxes label {
+    display: inline-block;
+    margin-top: 0;
+  }
+   #checkboxes input {
+    background: red;
+    display:inline-block;
+    margin-right: 10px;
+   }
+   button {
+     display: block;
+     margin: 20px 0;
+     background: crimson;
+     color: #fff;
+     padding: 14px;
+     border: 0;
+     border-radius: 4px;
+     font-size: 18px;
+     cursor: pointer;
+   }
+   #preview {
+     padding: 10px 20px;
+     border: 1px dotted #ccc;
+     margin: 30px 0;
+   }
+   h3 {
+     margin-top: 10px;
+   }
 </style>
